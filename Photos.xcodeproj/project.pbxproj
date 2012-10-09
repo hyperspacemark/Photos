@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D7A5806162498F7008C5D80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7A5805162498F7008C5D80 /* QuartzCore.framework */; };
 		4D7A580A1624AD49008C5D80 /* PHPhotoCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */; };
+		4D7A580D1624CE28008C5D80 /* PHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A580C1624CE28008C5D80 /* PHPhotoViewController.m */; };
 		4DFE57B6162388AA00829DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE57B5162388AA00829DFE /* UIKit.framework */; };
 		4DFE57B8162388AA00829DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE57B7162388AA00829DFE /* Foundation.framework */; };
 		4DFE57BA162388AA00829DFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE57B9162388AA00829DFE /* CoreGraphics.framework */; };
@@ -28,6 +29,8 @@
 		4D7A5805162498F7008C5D80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D7A58081624AD49008C5D80 /* PHPhotoCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCollectionFooterView.h; sourceTree = "<group>"; };
 		4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCollectionFooterView.m; sourceTree = "<group>"; };
+		4D7A580B1624CE28008C5D80 /* PHPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoViewController.h; sourceTree = "<group>"; };
+		4D7A580C1624CE28008C5D80 /* PHPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoViewController.m; sourceTree = "<group>"; };
 		4DFE57B1162388AA00829DFE /* Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFE57B5162388AA00829DFE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DFE57B7162388AA00829DFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				4DFE57C5162388AA00829DFE /* PHAppDelegate.m */,
 				4DFE57DE16238F0F00829DFE /* PHPhotoCollectionViewController.h */,
 				4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */,
+				4D7A580B1624CE28008C5D80 /* PHPhotoViewController.h */,
+				4D7A580C1624CE28008C5D80 /* PHPhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				4DFE57E016238F0F00829DFE /* PHPhotoCollectionViewController.m in Sources */,
 				4DFE57E416238F4000829DFE /* PHPhotoCell.m in Sources */,
 				4D7A580A1624AD49008C5D80 /* PHPhotoCollectionFooterView.m in Sources */,
+				4D7A580D1624CE28008C5D80 /* PHPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

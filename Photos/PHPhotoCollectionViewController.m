@@ -9,6 +9,7 @@
 #import "PHPhotoCollectionViewController.h"
 #import "PHPhotoCell.h"
 #import "PHPhotoCollectionFooterView.h"
+#import "PHPhotoViewController.h"
 
 @interface PHPhotoCollectionViewController ()
 
@@ -44,6 +45,17 @@
 - (void)didReceiveMemoryWarning
 {
     NSLog(@"Received memory warning");
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (![segue.identifier isEqualToString:@"PushPhotoSegue"])
+        return;
+
+    PHPhotoViewController *pvc = segue.destinationViewController;
+    NSIndexPath *selectedIndexPath = [self.collectionView.indexPathsForSelectedItems objectAtIndex:0];
+    ALAsset *photoAsset = [self.photos objectAtIndex:selectedIndexPath.row];
+    pvc.photoAsset = photoAsset;
 }
 
 #pragma mark - Asset Loading

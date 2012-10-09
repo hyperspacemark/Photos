@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pNf-lF-UoZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pNf-lF-UoZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -11,6 +11,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="uat-KQ-exP">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CL6-Si-7Gl">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="mrZ-ub-SfP" kind="relationship" relationship="rootViewController" id="NiU-iZ-5mM"/>
                     </connections>
@@ -18,6 +22,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cs3-G9-e9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="406" y="299"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="H0P-mx-lnp">
+            <objects>
+                <viewController id="jBV-rw-BsS" customClass="PHPhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oKX-TJ-Lae">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" maximumZoomScale="2" id="s0M-6n-huc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="wDI-Is-9p9">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="jBV-rw-BsS" id="wj5-IV-mEp"/>
+                                </connections>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="HDo-tc-pTV">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="action" id="X02-rO-3aH"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AmN-bh-gdK"/>
+                    <connections>
+                        <outlet property="imageView" destination="wDI-Is-9p9" id="71i-Ne-Pbn"/>
+                        <outlet property="scrollView" destination="s0M-6n-huc" id="tFG-vI-kvQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qcg-34-NUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440" y="299"/>
         </scene>
         <!--Photo Collection View Controller - Photos-->
         <scene sceneID="Nd3-4C-vkr">
@@ -45,24 +90,22 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="75" height="75"/>
+                                <connections>
+                                    <segue destination="jBV-rw-BsS" kind="push" identifier="PushPhotoSegue" id="ESi-Hg-xK9"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionFooter" id="LVQ-6K-nMt" customClass="PHPhotoCollectionFooterView">
                             <rect key="frame" x="0.0" y="147" width="320" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72D-6C-vgj">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72D-6C-vgj">
+                                    <rect key="frame" x="20" y="0.0" width="280" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" white="0.49936995967741937" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="72D-6C-vgj" firstAttribute="leading" secondItem="LVQ-6K-nMt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EGl-BY-3xb"/>
-                                <constraint firstItem="72D-6C-vgj" firstAttribute="bottom" secondItem="LVQ-6K-nMt" secondAttribute="bottom" type="default" id="EnS-3k-6kn"/>
-                                <constraint firstAttribute="trailing" secondItem="72D-6C-vgj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lIJ-Ym-0NU"/>
-                                <constraint firstItem="72D-6C-vgj" firstAttribute="top" secondItem="LVQ-6K-nMt" secondAttribute="top" type="default" id="n6B-z5-ahr"/>
-                            </constraints>
                             <connections>
                                 <outlet property="numberOfPhotosLabel" destination="72D-6C-vgj" id="xDQ-ov-Ddg"/>
                             </connections>
@@ -80,9 +123,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="PHPhotoCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCell.h"/>
         </class>
@@ -94,6 +134,13 @@
         </class>
         <class className="PHPhotoCollectionViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCollectionViewController.h"/>
+        </class>
+        <class className="PHPhotoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
