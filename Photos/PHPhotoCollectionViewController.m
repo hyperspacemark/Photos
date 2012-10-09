@@ -116,26 +116,9 @@
     
     static NSString *viewIdentifier = @"PhotoCollectionFooter";
     PHPhotoCollectionFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:viewIdentifier forIndexPath:indexPath];
-    footerView.numberOfPhotosLabel.attributedText = [self attributedNumberOfPhotosString];
+    footerView.numberOfPhotos = self.photos.count;
 
     return footerView;
-}
-
-- (NSString *)numberOfPhotosString
-{
-    return [NSString stringWithFormat:@"%i Photos", self.photos.count];
-}
-
-- (NSAttributedString *)attributedNumberOfPhotosString
-{
-    NSString *originalString = [self numberOfPhotosString];
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:originalString];
-    NSCharacterSet *nonNumericalCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
-    NSString *trimmedString = [originalString stringByTrimmingCharactersInSet:nonNumericalCharacterSet];
-    NSRange numericRange = [originalString rangeOfString:trimmedString];
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0f] range:numericRange];
-
-    return attributedString;
 }
 
 @end

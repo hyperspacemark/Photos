@@ -10,6 +10,7 @@
 
 @interface PHPhotoCollectionFooterView : UICollectionReusableView
 
+@property (assign, nonatomic) NSUInteger numberOfPhotos;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPhotosLabel;
 
 @end
