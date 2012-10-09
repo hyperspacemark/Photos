@@ -34,20 +34,6 @@
     return self;
 }
 
-#pragma mark - Setters
-
-- (void)setPhotos:(NSArray *)photos
-{
-    if (photos == _photos)
-        return;
-
-    _photos = photos;
-
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self.collectionView reloadData];
-    }];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
