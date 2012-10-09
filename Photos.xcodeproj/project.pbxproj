@@ -16,6 +16,10 @@
 		4DFE57C8162388AA00829DFE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57C7162388AA00829DFE /* Default.png */; };
 		4DFE57CA162388AA00829DFE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57C9162388AA00829DFE /* Default@2x.png */; };
 		4DFE57CC162388AA00829DFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57CB162388AA00829DFE /* Default-568h@2x.png */; };
+		4DFE57DB16238BFD00829DFE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */; };
+		4DFE57E016238F0F00829DFE /* PHPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */; };
+		4DFE57E416238F4000829DFE /* PHPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57E316238F4000829DFE /* PHPhotoCell.m */; };
+		4DFE57E616239BE500829DFE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE57E516239BE500829DFE /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,12 @@
 		4DFE57C7162388AA00829DFE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4DFE57C9162388AA00829DFE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4DFE57CB162388AA00829DFE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		4DFE57DE16238F0F00829DFE /* PHPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCollectionViewController.h; sourceTree = "<group>"; };
+		4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCollectionViewController.m; sourceTree = "<group>"; };
+		4DFE57E216238F4000829DFE /* PHPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCell.h; sourceTree = "<group>"; };
+		4DFE57E316238F4000829DFE /* PHPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCell.m; sourceTree = "<group>"; };
+		4DFE57E516239BE500829DFE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFE57E616239BE500829DFE /* AssetsLibrary.framework in Frameworks */,
 				4DFE57B6162388AA00829DFE /* UIKit.framework in Frameworks */,
 				4DFE57B8162388AA00829DFE /* Foundation.framework in Frameworks */,
 				4DFE57BA162388AA00829DFE /* CoreGraphics.framework in Frameworks */,
@@ -52,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFE57BB162388AA00829DFE /* Photos */,
+				4DFE57BC162388AA00829DFE /* Supporting Files */,
 				4DFE57B4162388AA00829DFE /* Frameworks */,
 				4DFE57B2162388AA00829DFE /* Products */,
 			);
@@ -68,6 +80,7 @@
 		4DFE57B4162388AA00829DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DFE57E516239BE500829DFE /* AssetsLibrary.framework */,
 				4DFE57B5162388AA00829DFE /* UIKit.framework */,
 				4DFE57B7162388AA00829DFE /* Foundation.framework */,
 				4DFE57B9162388AA00829DFE /* CoreGraphics.framework */,
@@ -78,9 +91,9 @@
 		4DFE57BB162388AA00829DFE /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				4DFE57C4162388AA00829DFE /* PHAppDelegate.h */,
-				4DFE57C5162388AA00829DFE /* PHAppDelegate.m */,
-				4DFE57BC162388AA00829DFE /* Supporting Files */,
+				4DFE57E116238F2300829DFE /* Views */,
+				4DFE57DD16238C3A00829DFE /* Controllers */,
+				4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -97,6 +110,27 @@
 				4DFE57CB162388AA00829DFE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		4DFE57DD16238C3A00829DFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DFE57C4162388AA00829DFE /* PHAppDelegate.h */,
+				4DFE57C5162388AA00829DFE /* PHAppDelegate.m */,
+				4DFE57DE16238F0F00829DFE /* PHPhotoCollectionViewController.h */,
+				4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4DFE57E116238F2300829DFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DFE57E216238F4000829DFE /* PHPhotoCell.h */,
+				4DFE57E316238F4000829DFE /* PHPhotoCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +189,7 @@
 				4DFE57C8162388AA00829DFE /* Default.png in Resources */,
 				4DFE57CA162388AA00829DFE /* Default@2x.png in Resources */,
 				4DFE57CC162388AA00829DFE /* Default-568h@2x.png in Resources */,
+				4DFE57DB16238BFD00829DFE /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +202,8 @@
 			files = (
 				4DFE57C2162388AA00829DFE /* main.m in Sources */,
 				4DFE57C6162388AA00829DFE /* PHAppDelegate.m in Sources */,
+				4DFE57E016238F0F00829DFE /* PHPhotoCollectionViewController.m in Sources */,
+				4DFE57E416238F4000829DFE /* PHPhotoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +274,12 @@
 		4DFE57D0162388AA00829DFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Adams (K54BCU2UT6)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Photos/Photos-Prefix.pch";
 				INFOPLIST_FILE = "Photos/Photos-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "62C35398-D5DE-49F0-A1C2-6378DDE3876B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -248,10 +287,12 @@
 		4DFE57D1162388AA00829DFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Adams (K54BCU2UT6)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Photos/Photos-Prefix.pch";
 				INFOPLIST_FILE = "Photos/Photos-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "62C35398-D5DE-49F0-A1C2-6378DDE3876B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -275,6 +316,7 @@
 				4DFE57D1162388AA00829DFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
