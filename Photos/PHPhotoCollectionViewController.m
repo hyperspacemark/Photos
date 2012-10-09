@@ -8,6 +8,7 @@
 
 #import "PHPhotoCollectionViewController.h"
 #import "PHPhotoCell.h"
+#import "PHPhotoCollectionFooterView.h"
 
 @interface PHPhotoCollectionViewController ()
 
@@ -106,6 +107,35 @@
     cell.contentView.layer.contents = (id)asset.thumbnail;
 
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader])
+        return nil;
+    
+    static NSString *viewIdentifier = @"PhotoCollectionFooter";
+    PHPhotoCollectionFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:viewIdentifier forIndexPath:indexPath];
+    footerView.numberOfPhotosLabel.attributedText = [self attributedNumberOfPhotosString];
+
+    return footerView;
+}
+
+- (NSString *)numberOfPhotosString
+{
+    return [NSString stringWithFormat:@"%i Photos", self.photos.count];
+}
+
+- (NSAttributedString *)attributedNumberOfPhotosString
+{
+    NSString *originalString = [self numberOfPhotosString];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:originalString];
+    NSCharacterSet *nonNumericalCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSString *trimmedString = [originalString stringByTrimmingCharactersInSet:nonNumericalCharacterSet];
+    NSRange numericRange = [originalString rangeOfString:trimmedString];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0f] range:numericRange];
+
+    return attributedString;
 }
 
 @end

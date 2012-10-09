@@ -31,7 +31,7 @@
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="2" id="gC2-Vp-rz5">
                             <size key="itemSize" width="75" height="75"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
                             <inset key="sectionInset" minX="3" minY="68" maxX="3" maxY="4"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -47,6 +47,26 @@
                                 <size key="customSize" width="75" height="75"/>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionFooter" id="LVQ-6K-nMt" customClass="PHPhotoCollectionFooterView">
+                            <rect key="frame" x="0.0" y="147" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72D-6C-vgj">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" white="0.49936995967741937" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="72D-6C-vgj" firstAttribute="leading" secondItem="LVQ-6K-nMt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EGl-BY-3xb"/>
+                                <constraint firstItem="72D-6C-vgj" firstAttribute="bottom" secondItem="LVQ-6K-nMt" secondAttribute="bottom" type="default" id="EnS-3k-6kn"/>
+                                <constraint firstAttribute="trailing" secondItem="72D-6C-vgj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lIJ-Ym-0NU"/>
+                                <constraint firstItem="72D-6C-vgj" firstAttribute="top" secondItem="LVQ-6K-nMt" secondAttribute="top" type="default" id="n6B-z5-ahr"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="numberOfPhotosLabel" destination="72D-6C-vgj" id="xDQ-ov-Ddg"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="mrZ-ub-SfP" id="Hgx-Ec-QY5"/>
                             <outlet property="delegate" destination="mrZ-ub-SfP" id="iDZ-mo-7eK"/>
@@ -60,8 +80,17 @@
         </scene>
     </scenes>
     <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="PHPhotoCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCell.h"/>
+        </class>
+        <class className="PHPhotoCollectionFooterView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCollectionFooterView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="numberOfPhotosLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="PHPhotoCollectionViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCollectionViewController.h"/>
