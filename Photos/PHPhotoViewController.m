@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *fullScreenImage;
 
 @end
 
@@ -19,24 +20,46 @@
 
 @implementation PHPhotoViewController
 
+#pragma mark - Getters
+
+- (UIImage *)fullScreenImage
+{
+    if (!_fullScreenImage)
+        _fullScreenImage = [UIImage imageWithCGImage:self.photoAsset.defaultRepresentation.fullScreenImage];
+
+    return _fullScreenImage;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.imageView.image = [UIImage imageWithCGImage:self.photoAsset.defaultRepresentation.fullScreenImage];
+    ALAssetRepresentation *assetRepresentation = self.photoAsset.defaultRepresentation;
+    self.fullScreenImage = [UIImage imageWithCGImage:assetRepresentation.fullScreenImage];
+    self.imageView.image = self.fullScreenImage;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     ALAssetRepresentation *assetRepresentation = self.photoAsset.defaultRepresentation;
-    UIImage *image = [UIImage imageWithCGImage:assetRepresentation.fullResolutionImage scale:assetRepresentation.scale orientation:assetRepresentation.orientation];
-    self.imageView.image = image;
+    self.imageView.image = [UIImage imageWithCGImage:assetRepresentation.fullResolutionImage scale:assetRepresentation.scale orientation:assetRepresentation.orientation];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    self.fullScreenImage = nil;
 }
+
+#pragma mark - Sharing (is caring)
+
+- (IBAction)share:(UIBarButtonItem *)sender
+{
+    NSArray *items = (@[ self.fullScreenImage ]);
+    UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
 
 #pragma mark - UIScrollViewDelegate
 

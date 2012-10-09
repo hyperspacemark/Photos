@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D552AC81624E70200F13998 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D552AC71624E70200F13998 /* Social.framework */; };
 		4D7A5806162498F7008C5D80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7A5805162498F7008C5D80 /* QuartzCore.framework */; };
 		4D7A580A1624AD49008C5D80 /* PHPhotoCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */; };
 		4D7A580D1624CE28008C5D80 /* PHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A580C1624CE28008C5D80 /* PHPhotoViewController.m */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D552AC71624E70200F13998 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4D7A5805162498F7008C5D80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D7A58081624AD49008C5D80 /* PHPhotoCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCollectionFooterView.h; sourceTree = "<group>"; };
 		4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCollectionFooterView.m; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D552AC81624E70200F13998 /* Social.framework in Frameworks */,
 				4D7A5806162498F7008C5D80 /* QuartzCore.framework in Frameworks */,
 				4DFE57E616239BE500829DFE /* AssetsLibrary.framework in Frameworks */,
 				4DFE57B6162388AA00829DFE /* UIKit.framework in Frameworks */,
@@ -71,6 +74,7 @@
 		4DFE57A6162388AA00829DFE = {
 			isa = PBXGroup;
 			children = (
+				4D552AC71624E70200F13998 /* Social.framework */,
 				4DFE57BB162388AA00829DFE /* Photos */,
 				4DFE57BC162388AA00829DFE /* Supporting Files */,
 				4DFE57B4162388AA00829DFE /* Frameworks */,
