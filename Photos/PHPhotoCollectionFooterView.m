@@ -8,6 +8,14 @@
 
 #import "PHPhotoCollectionFooterView.h"
 
+@interface PHPhotoCollectionFooterView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *numberOfPhotosLabel;
+
+@end
+
+#pragma mark -
+
 @implementation PHPhotoCollectionFooterView
 
 - (void)setNumberOfPhotos:(NSUInteger)numberOfPhotos
