@@ -18,23 +18,24 @@
 
 @implementation PHPhotoCollectionFooterView
 
-- (void)setNumberOfPhotos:(NSUInteger)numberOfPhotos
+- (void)setNumberOfDisplayedPhotos:(NSUInteger)numberOfPhotos
 {
-    _numberOfPhotos = numberOfPhotos;
-    self.numberOfPhotosLabel.attributedText = [self attributedStringForString:[self numberOfPhotosString]];
+    _numberOfDisplayedPhotos = numberOfPhotos;
+    self.numberOfPhotosLabel.attributedText = [self attributedNumberOfPhotosString];
 }
 
 - (NSString *)numberOfPhotosString
 {
-    return [NSString stringWithFormat:@"%i Photos", self.numberOfPhotos];
+    return [NSString stringWithFormat:@"%i Photos", self.numberOfDisplayedPhotos];
 }
 
-- (NSAttributedString *)attributedStringForString:(NSString *)string
+- (NSAttributedString *)attributedNumberOfPhotosString
 {
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    NSString *originalString = [self numberOfPhotosString];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:originalString];
     NSCharacterSet *nonNumericalCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
-    NSString *trimmedString = [string stringByTrimmingCharactersInSet:nonNumericalCharacterSet];
-    NSRange numericRange = [string rangeOfString:trimmedString];
+    NSString *trimmedString = [originalString stringByTrimmingCharactersInSet:nonNumericalCharacterSet];
+    NSRange numericRange = [originalString rangeOfString:trimmedString];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0f] range:numericRange];
 
     return attributedString;

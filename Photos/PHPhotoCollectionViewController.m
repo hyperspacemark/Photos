@@ -116,7 +116,7 @@
     
     static NSString *viewIdentifier = @"PhotoCollectionFooter";
     PHPhotoCollectionFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:viewIdentifier forIndexPath:indexPath];
-    footerView.numberOfPhotos = self.photos.count;
+    footerView.numberOfDisplayedPhotos = self.photos.count;
 
     return footerView;
 }

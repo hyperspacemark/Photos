@@ -10,6 +10,6 @@
 
 @interface PHPhotoCollectionFooterView : UICollectionReusableView
 
-@property (assign, nonatomic) NSUInteger numberOfPhotos;
+@property (assign, nonatomic) NSUInteger numberOfDisplayedPhotos;
 
 @end
