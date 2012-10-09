@@ -7,12 +7,20 @@
 //
 
 #import "PHPhotoCollectionViewController.h"
+#import "PHPhotoCell.h"
 
 @interface PHPhotoCollectionViewController ()
 
+@property (strong, nonatomic) ALAssetsLibrary *assetsLibrary;
+@property (strong, nonatomic) NSArray *photos;
+
 @end
 
+#pragma mark -
+
 @implementation PHPhotoCollectionViewController
+
+#pragma mark - Initialization
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -21,9 +29,29 @@
     if (!self)
         return nil;
 
-    
+    _assetsLibrary = [[ALAssetsLibrary alloc] init];
 
     return self;
+}
+
+#pragma mark - Setters
+
+- (void)setPhotos:(NSArray *)photos
+{
+    if (photos == _photos)
+        return;
+
+    _photos = photos;
+
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.collectionView reloadData];
+    }];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self loadPhotos];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,20 +59,65 @@
     NSLog(@"Received memory warning");
 }
 
+#pragma mark - Asset Loading
+
+- (void)loadPhotos
+{
+    [self.assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop)
+    {
+
+        if (!group)
+            return;
+
+        [self loadPhotosInGroup:group];
+        *stop = YES;
+
+    } failureBlock:^(NSError *error) {
+
+        NSLog(@"Error enumerating asset groups: %@, %@", error, error.userInfo);
+
+    }];
+}
+
+- (void)loadPhotosInGroup:(ALAssetsGroup *)assetsGroup
+{
+    __block NSMutableArray *photos = [NSMutableArray arrayWithCapacity:assetsGroup.numberOfAssets];
+    
+    [assetsGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+
+        if (!result)
+            return;
+
+        [photos addObject:result];
+
+    }];
+
+    [self reloadCollectionViewWithPhotos:[photos copy]];
+}
+
+- (void)reloadCollectionViewWithPhotos:(NSArray *)photos
+{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+
+        self.photos = photos;
+        [self.collectionView reloadData];
+
+    }];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5000;
+    return self.photos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"PhotoCell";
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-
-    if (!cell)
-        NSLog(@"Dropped cell");
+    PHPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
+    cell.contentView.layer.contents = (id)asset.thumbnail;
 
     return cell;
 }
