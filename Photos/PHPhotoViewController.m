@@ -42,7 +42,11 @@
 {
     [super viewDidAppear:animated];
     ALAssetRepresentation *assetRepresentation = self.photoAsset.defaultRepresentation;
-    self.imageView.image = [UIImage imageWithCGImage:assetRepresentation.fullResolutionImage scale:assetRepresentation.scale orientation:assetRepresentation.orientation];
+    UIImage *fullResolutionImage = [UIImage imageWithCGImage:assetRepresentation.fullResolutionImage scale:assetRepresentation.scale orientation:assetRepresentation.orientation];
+    self.imageView.image = fullResolutionImage;
+
+    [self resizeImageViewToImage];
+    [self centerImageView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,9 +74,40 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
+    [self centerImageView];
+}
+
+#pragma mark UIScrollView Helpers
+
+- (void)resizeImageViewToImage
+{
+    CGFloat scale = 0.0f;
+    CGFloat width = self.imageView.image.size.width;
+    CGFloat height = self.imageView.image.size.height;
+
+    CGRect frame = self.imageView.frame;
+
+    if (width > height)
+    {
+        scale = width / height;
+        frame.size.width = CGRectGetWidth(self.scrollView.bounds);
+        frame.size.height = frame.size.width / scale;
+    }
+    else
+    {
+        scale = height / width;
+        frame.size.height = CGRectGetHeight(self.scrollView.bounds);
+        frame.size.width = frame.size.height / scale;
+    }
+
+    self.imageView.frame = frame;
+}
+
+- (void)centerImageView
+{
     CGRect scrollBounds = self.scrollView.bounds;
     CGRect imageViewFrame = self.imageView.frame;
-
+    
     if (CGRectGetWidth(imageViewFrame) < CGRectGetWidth(scrollBounds))
         imageViewFrame.origin.x = (CGRectGetWidth(scrollBounds) - CGRectGetWidth(imageViewFrame)) / 2;
     else
@@ -84,10 +119,6 @@
         imageViewFrame.origin.y = 0.0f;
 
     self.imageView.frame = imageViewFrame;
-
-    NSLog(@"Scroll View Content Size: %@", NSStringFromCGSize(self.scrollView.contentSize));
-    NSLog(@"Image View Frame Size: %@", NSStringFromCGRect(self.imageView.frame));
 }
-
 
 @end
