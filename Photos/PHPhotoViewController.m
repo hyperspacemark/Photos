@@ -12,8 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) UIImage *fullScreenImage;
-@property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+@property (strong, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
 @end
 
@@ -31,15 +32,15 @@
     return _fullScreenImage;
 }
 
-- (UITapGestureRecognizer *)tapGestureRecognizer
+- (UITapGestureRecognizer *)doubleTapGestureRecognizer
 {
-    if (!_tapGestureRecognizer)
+    if (!_doubleTapGestureRecognizer)
     {
-        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
-        _tapGestureRecognizer.numberOfTapsRequired = 2;
+        _doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+        _doubleTapGestureRecognizer.numberOfTapsRequired = 2;
     }
 
-    return _tapGestureRecognizer;
+    return _doubleTapGestureRecognizer;
 }
 
 #pragma mark - View Lifecycle
@@ -48,7 +49,7 @@
 {
     [super viewDidLoad];
     self.imageView.image = self.fullScreenImage;
-    [self.scrollView addGestureRecognizer:self.tapGestureRecognizer];
+    [self.scrollView addGestureRecognizer:self.doubleTapGestureRecognizer];
 }
 
 - (void)viewDidAppear:(BOOL)animated
