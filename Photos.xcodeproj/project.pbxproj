@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4D552AC81624E70200F13998 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D552AC71624E70200F13998 /* Social.framework */; };
+		4D552ACD1624EEC900F13998 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D552ACB1624EEC900F13998 /* Icon.png */; };
+		4D552ACE1624EEC900F13998 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D552ACC1624EEC900F13998 /* Icon@2x.png */; };
+		4D552AD91624F25100F13998 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D552AD61624F25100F13998 /* Default-568h@2x.png */; };
+		4D552ADA1624F25100F13998 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D552AD71624F25100F13998 /* Default.png */; };
+		4D552ADB1624F25100F13998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D552AD81624F25100F13998 /* Default@2x.png */; };
 		4D7A5806162498F7008C5D80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7A5805162498F7008C5D80 /* QuartzCore.framework */; };
 		4D7A580A1624AD49008C5D80 /* PHPhotoCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */; };
 		4D7A580D1624CE28008C5D80 /* PHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A580C1624CE28008C5D80 /* PHPhotoViewController.m */; };
@@ -17,9 +22,6 @@
 		4DFE57C0162388AA00829DFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57BE162388AA00829DFE /* InfoPlist.strings */; };
 		4DFE57C2162388AA00829DFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57C1162388AA00829DFE /* main.m */; };
 		4DFE57C6162388AA00829DFE /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57C5162388AA00829DFE /* PHAppDelegate.m */; };
-		4DFE57C8162388AA00829DFE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57C7162388AA00829DFE /* Default.png */; };
-		4DFE57CA162388AA00829DFE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57C9162388AA00829DFE /* Default@2x.png */; };
-		4DFE57CC162388AA00829DFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57CB162388AA00829DFE /* Default-568h@2x.png */; };
 		4DFE57DB16238BFD00829DFE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */; };
 		4DFE57E016238F0F00829DFE /* PHPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */; };
 		4DFE57E416238F4000829DFE /* PHPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57E316238F4000829DFE /* PHPhotoCell.m */; };
@@ -28,6 +30,11 @@
 
 /* Begin PBXFileReference section */
 		4D552AC71624E70200F13998 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4D552ACB1624EEC900F13998 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		4D552ACC1624EEC900F13998 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		4D552AD61624F25100F13998 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4D552AD71624F25100F13998 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4D552AD81624F25100F13998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4D7A5805162498F7008C5D80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D7A58081624AD49008C5D80 /* PHPhotoCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCollectionFooterView.h; sourceTree = "<group>"; };
 		4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCollectionFooterView.m; sourceTree = "<group>"; };
@@ -43,9 +50,6 @@
 		4DFE57C3162388AA00829DFE /* Photos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photos-Prefix.pch"; sourceTree = "<group>"; };
 		4DFE57C4162388AA00829DFE /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
 		4DFE57C5162388AA00829DFE /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
-		4DFE57C7162388AA00829DFE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		4DFE57C9162388AA00829DFE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		4DFE57CB162388AA00829DFE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4DFE57DE16238F0F00829DFE /* PHPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCollectionViewController.h; sourceTree = "<group>"; };
 		4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCollectionViewController.m; sourceTree = "<group>"; };
@@ -71,10 +75,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D552ACA1624EEC100F13998 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4D552ACB1624EEC900F13998 /* Icon.png */,
+				4D552ACC1624EEC900F13998 /* Icon@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		4D552ACF1624F19C00F13998 /* Default Images */ = {
+			isa = PBXGroup;
+			children = (
+				4D552AD61624F25100F13998 /* Default-568h@2x.png */,
+				4D552AD71624F25100F13998 /* Default.png */,
+				4D552AD81624F25100F13998 /* Default@2x.png */,
+			);
+			name = "Default Images";
+			sourceTree = "<group>";
+		};
 		4DFE57A6162388AA00829DFE = {
 			isa = PBXGroup;
 			children = (
-				4D552AC71624E70200F13998 /* Social.framework */,
 				4DFE57BB162388AA00829DFE /* Photos */,
 				4DFE57BC162388AA00829DFE /* Supporting Files */,
 				4DFE57B4162388AA00829DFE /* Frameworks */,
@@ -93,6 +115,7 @@
 		4DFE57B4162388AA00829DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D552AC71624E70200F13998 /* Social.framework */,
 				4D7A5805162498F7008C5D80 /* QuartzCore.framework */,
 				4DFE57E516239BE500829DFE /* AssetsLibrary.framework */,
 				4DFE57B5162388AA00829DFE /* UIKit.framework */,
@@ -115,13 +138,12 @@
 		4DFE57BC162388AA00829DFE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D552ACF1624F19C00F13998 /* Default Images */,
+				4D552ACA1624EEC100F13998 /* Icons */,
 				4DFE57BD162388AA00829DFE /* Photos-Info.plist */,
 				4DFE57BE162388AA00829DFE /* InfoPlist.strings */,
 				4DFE57C1162388AA00829DFE /* main.m */,
 				4DFE57C3162388AA00829DFE /* Photos-Prefix.pch */,
-				4DFE57C7162388AA00829DFE /* Default.png */,
-				4DFE57C9162388AA00829DFE /* Default@2x.png */,
-				4DFE57CB162388AA00829DFE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			path = Photos;
@@ -204,10 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DFE57C0162388AA00829DFE /* InfoPlist.strings in Resources */,
-				4DFE57C8162388AA00829DFE /* Default.png in Resources */,
-				4DFE57CA162388AA00829DFE /* Default@2x.png in Resources */,
-				4DFE57CC162388AA00829DFE /* Default-568h@2x.png in Resources */,
 				4DFE57DB16238BFD00829DFE /* Storyboard.storyboard in Resources */,
+				4D552ACD1624EEC900F13998 /* Icon.png in Resources */,
+				4D552ACE1624EEC900F13998 /* Icon@2x.png in Resources */,
+				4D552AD91624F25100F13998 /* Default-568h@2x.png in Resources */,
+				4D552ADA1624F25100F13998 /* Default.png in Resources */,
+				4D552ADB1624F25100F13998 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
