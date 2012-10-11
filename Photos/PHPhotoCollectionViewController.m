@@ -7,7 +7,6 @@
 //
 
 #import "PHPhotoCollectionViewController.h"
-#import "PHPhotoCell.h"
 #import "PHPhotoCollectionFooterView.h"
 #import "PHPhotoViewController.h"
 
@@ -114,7 +113,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"PhotoCell";
-    PHPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
     cell.contentView.layer.contents = (id)asset.thumbnail;
 

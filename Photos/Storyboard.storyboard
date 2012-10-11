@@ -85,7 +85,7 @@
                             <inset key="sectionInset" minX="3" minY="68" maxX="3" maxY="4"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hGk-go-Pot" customClass="PHPhotoCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hGk-go-Pot">
                                 <rect key="frame" x="3" y="68" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -128,9 +128,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="PHPhotoCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCell.h"/>
-        </class>
         <class className="PHPhotoCollectionFooterView" superclassName="UICollectionReusableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PHPhotoCollectionFooterView.h"/>
             <relationships>
