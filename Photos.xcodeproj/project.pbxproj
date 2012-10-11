@@ -24,7 +24,6 @@
 		4DFE57C6162388AA00829DFE /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57C5162388AA00829DFE /* PHAppDelegate.m */; };
 		4DFE57DB16238BFD00829DFE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */; };
 		4DFE57E016238F0F00829DFE /* PHPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */; };
-		4DFE57E416238F4000829DFE /* PHPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE57E316238F4000829DFE /* PHPhotoCell.m */; };
 		4DFE57E616239BE500829DFE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE57E516239BE500829DFE /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +52,6 @@
 		4DFE57DA16238BFD00829DFE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4DFE57DE16238F0F00829DFE /* PHPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCollectionViewController.h; sourceTree = "<group>"; };
 		4DFE57DF16238F0F00829DFE /* PHPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCollectionViewController.m; sourceTree = "<group>"; };
-		4DFE57E216238F4000829DFE /* PHPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoCell.h; sourceTree = "<group>"; };
-		4DFE57E316238F4000829DFE /* PHPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoCell.m; sourceTree = "<group>"; };
 		4DFE57E516239BE500829DFE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -165,8 +162,6 @@
 		4DFE57E116238F2300829DFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4DFE57E216238F4000829DFE /* PHPhotoCell.h */,
-				4DFE57E316238F4000829DFE /* PHPhotoCell.m */,
 				4D7A58081624AD49008C5D80 /* PHPhotoCollectionFooterView.h */,
 				4D7A58091624AD49008C5D80 /* PHPhotoCollectionFooterView.m */,
 			);
@@ -245,7 +240,6 @@
 				4DFE57C2162388AA00829DFE /* main.m in Sources */,
 				4DFE57C6162388AA00829DFE /* PHAppDelegate.m in Sources */,
 				4DFE57E016238F0F00829DFE /* PHPhotoCollectionViewController.m in Sources */,
-				4DFE57E416238F4000829DFE /* PHPhotoCell.m in Sources */,
 				4D7A580A1624AD49008C5D80 /* PHPhotoCollectionFooterView.m in Sources */,
 				4D7A580D1624CE28008C5D80 /* PHPhotoViewController.m in Sources */,
 			);

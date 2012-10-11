@@ -36,7 +36,7 @@
     NSCharacterSet *nonNumericalCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     NSString *trimmedString = [originalString stringByTrimmingCharactersInSet:nonNumericalCharacterSet];
     NSRange numericRange = [originalString rangeOfString:trimmedString];
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0f] range:numericRange];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:self.numberOfPhotosLabel.font.pointSize] range:numericRange];
 
     return attributedString;
 }
